@@ -9,15 +9,15 @@ Visited links (Saturated blue): #638bb3;
   --background-color: #fff;
   --text-color: #000;
   --visited-color: #638bb3;
-  --tertiary-color: #FFD166;
+  --tertiary-color: #ffd166;
   --button-color: #357b70;
   --secondary-button-color: #e0b354;
-  --grid-background-color: #D3D3D3;
-
+  --grid-background-color: #d3d3d3;
 }
 
 * {
   box-sizing: border-box;
+
   /* force the padding and border to be included in the final specified width rather than being added on top */
 }
 
@@ -27,8 +27,10 @@ body {
   font-family: "Lora", sans-serif;
   font-weight: 400;
   font-size: 16px;
+
   /* Sets the font size to 16px */
   line-height: 1.6;
+
   /* Sets the line-height to 1.6 */
 }
 
@@ -50,6 +52,7 @@ h3 {
 a {
   color: var(--primary-color);
 }
+
 a:visited {
   /*  Pseudo-classes... visited link */
   color: var(--visited-color);
@@ -58,12 +61,11 @@ a:visited {
 a:hover,
 a:focus {
   /* No underlining when hovering over a link (a:hover MUST come after a:visited) */
-  /* Focus activates when element is targeted by keyboard*/
+
   text-decoration: none;
 }
 
 a:active {
-  /* Selected Link Likewise, a:active MUST come after a:hover*/
   color: var(--tertiary-color);
 }
 
@@ -71,16 +73,20 @@ button,
 .button {
   /* overwrites browser defaults and resets the border */
   border: none;
+
   /* takes font from outer container */
   display: inline-block;
   font-family: inherit;
   background-color: var(--button-color);
   color: white;
   text-decoration: none;
+
   /* adds spacing to the button (bt text and border) */
   padding: 10px;
+
   /* Rounds the button */
   border-radius: 3px;
+
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: opacity 0.9s;
@@ -90,8 +96,8 @@ button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-  /* lets the mouse appear as a hand when hovering over the button*/
   cursor: pointer;
+
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
 }
@@ -101,7 +107,9 @@ button:focus,
   background-color: var(--secondary-button-color);
   color: var(--text-color);
 }
-.navigation-list, .enjoy {
+
+.navigation-list,
+.enjoy {
   list-style-type: none;
 }
 
@@ -109,6 +117,7 @@ button:focus,
   display: inline-block;
   margin-left: 15px;
 }
+
 .navigation-list__item--active {
   text-decoration: none;
 }
@@ -120,7 +129,8 @@ button:focus,
   border-radius: 50%;
 }
 
-.profile, .about {
+.profile,
+.about {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
@@ -128,8 +138,10 @@ button:focus,
 
 .page-footer {
   clear: both;
+
   /* Clears prior float values */
   display: flex;
+
   /* flexible box layout- single dimension layout */
   flex-direction: column;
   text-align: center;
@@ -156,22 +168,26 @@ button:focus,
   display: inline-block;
   width: 33%;
 }
+
 /* end grid fallback */
 
 @supports (display: grid) {
   .grid {
     display: grid;
+
     /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
   }
+
   .grid__item {
     background-color: var(--grid-background-color);
     width: auto;
     min-height: auto;
     margin: 0;
   }
+
   .grid__item:last-child {
     grid-column: 3 / 3;
     grid-row: 1 / 3;
@@ -183,19 +199,23 @@ button:focus,
     grid-template-columns: 1fr;
   }
 }
+
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media all and (max-width: 750px) {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
@@ -205,9 +225,11 @@ button:focus,
   0% {
     fill: #edc655;
   }
+
   50% {
     fill: #fcffad;
   }
+
   100% {
     fill: #f76414;
   }
@@ -221,8 +243,9 @@ button:focus,
   0% {
     transform: translate(0, 50px);
   }
+
   100% {
-    transform:translate(200px, 50px);
+    transform: translate(200px, 50px);
   }
 }
 
@@ -238,6 +261,7 @@ button:focus,
   from {
     transform: translate(446px, 48px);
   }
+
   to {
     transform: translate(100px, 48px);
   }
